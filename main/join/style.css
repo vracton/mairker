@@ -1,0 +1,126 @@
+body {
+	overflow: none;
+	color: white;
+}
+
+#mainCont {
+	margin-top: 12px;
+	height: calc(100vh - 26px);
+	width: 30vw;
+	border-radius: 12px;
+	position: absolute;
+	right: 50%;
+	transform: translate(50%);
+}
+
+#title {
+	height: 8%;
+	font-size: 3em;
+	font-display: bolder;
+	text-align: center;
+}
+
+#subCont {
+	height: 92%;
+}
+
+#roomInput {
+	margin: 6px;
+	margin-top: 0px;
+	padding-left: 6px;
+	padding-right: 6px;
+	height: calc(7% - 8px);
+	width: calc(100% - 26px);
+	border-radius: 6px;
+	color: white;
+	font-size: 1rem;
+}
+
+#nameInput {
+	margin: 6px;
+	margin-top: 0px;
+	padding-left: 6px;
+	padding-right: 6px;
+	height: calc(7% - 8px);
+	width: calc(100% - 26px);
+	border-radius: 6px;
+	color: white;
+	font-size: 1rem;
+}
+
+#createBtn {
+	cursor: pointer;
+	position: absolute;
+	top: 15%;
+	right: 0;
+	margin-right: 10px;
+	margin-bottom: 12px;
+	padding-left: 4px;
+	padding-right: 4px;
+	height: calc(7% - 18px);
+	width: calc(21% - 22px);
+	border-radius: 3px;
+	color: white;
+	font-size: 1rem;
+}
+
+#roomCont {
+	overflow-y: auto;
+	margin: 6px;
+	margin-top: 0px;
+	width: calc(100% - 14px);
+	height: calc(86% - 8px);
+	border-radius: 6px;
+	display: flex;
+	flex-direction: column;
+}
+
+.roomCard {
+	cursor: pointer;
+	position: relative;
+	margin: 6px;
+	margin-bottom: 0px;
+	border-radius: 3px;
+	height: 10%;
+	min-height: 10%;
+	width: calc(100% - 14px);
+}
+
+.roomCard {
+	transition: 0.25s;
+}
+
+.roomCard:hover {
+	border: 1px solid rgba(255, 255, 255, 0.75);
+}
+
+.roomCard:last-of-type {
+	margin-bottom: 6px;
+}
+
+.roomCard > h1 {
+	font-size: 1.75em;
+	font-display: bold;
+}
+
+.roomCard > h3 {
+	font-size: 1em;
+}
+
+.roomCard > .roomPlrCount {
+	position: absolute;
+	bottom: 3px;
+	right: 3px;
+}
+
+.roomCard > .roomStatus {
+	position: absolute;
+	bottom: 3px;
+	left: 3px;
+}
+
+.roomCard > .roomName {
+	position: absolute;
+	top: 3px;
+	left: 3px;
+}

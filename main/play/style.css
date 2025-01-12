@@ -1,0 +1,595 @@
+:root {
+	--iHeight: 18px;
+}
+
+body {
+	overflow: none;
+	color: white;
+}
+
+#titleBar {
+	margin: 12px;
+	width: calc(100vw - 26px);
+	height: calc(10vh - 14px);
+	position: relative;
+	border-radius: 12px;
+}
+
+#ownPlace {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	margin: 6px;
+	padding-left: 4px;
+	padding-right: 4px;
+	height: calc(100% - 14px);
+	width: calc(4% - 7px);
+	border-radius: 6px;
+}
+
+#ownPlace > p {
+	font-weight: bold;
+	font-size: 1.25rem;
+	position: absolute;
+	white-space: nowrap;
+	top: 50%;
+	right: 50%;
+	transform: translate(50%, -50%);
+}
+
+#roomName {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	margin: 6px;
+	padding-left: 4px;
+	padding-right: 4px;
+	height: calc(100% - 14px);
+	width: calc(11% - 7px);
+	border-radius: 6px;
+}
+
+#roomName > p {
+	font-weight: bold;
+	font-size: 1.25rem;
+	position: absolute;
+	white-space: nowrap;
+	top: 50%;
+	right: 50%;
+	transform: translate(50%, -50%);
+}
+
+#titleBar > p {
+	font-weight: bold;
+	font-size: 3rem;
+	position: absolute;
+	top: 50%;
+	right: 50%;
+	transform: translate(50%, -50%);
+}
+
+#topBar {
+	margin: 12px;
+	width: calc(70vw - 20px);
+	height: calc(10vh - 18px);
+	position: relative;
+	border-radius: 12px;
+}
+
+#topBar > p {
+	letter-spacing: 0.2rem;
+	font-weight: bold;
+	font-size: 2rem;
+	position: absolute;
+	top: 50%;
+	right: 50%;
+	transform: translate(50%, -50%);
+}
+
+.drawing {
+	margin: 12px;
+	width: calc(70vw - 20px);
+	height: calc(70vh - 18px);
+	position: relative;
+	border-radius: 12px;
+}
+
+/* figure out what looks good ! */
+#drawCanvas {
+	margin: 6px;
+	width: calc(100% - 12px);
+	height: calc(100% - 12px);
+	background-color: white;
+	backdrop-filter: blur(40px);
+	-webkit-backdrop-filter: blur(100%);
+	border-radius: 6px;
+}
+
+#bottomBar {
+	margin: 12px;
+	width: calc(70vw - 20px);
+	height: calc(10vh - 18px);
+	position: relative;
+	border-radius: 12px;
+	text-align: center;
+}
+
+#bottomBar > p {
+	font-weight: bold;
+	font-size: 1.5rem;
+	position: absolute;
+	top: 50%;
+	right: 50%;
+	transform: translate(50%, -50%);
+}
+
+#leaderboard {
+	overflow-y: auto;
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	right: 0;
+	top: calc(10vh - 0px);
+	margin: 12px;
+	width: calc(30vw - 20px);
+	height: calc(30vh - 26px);
+	border-radius: 12px;
+}
+
+.lbItem {
+	bottom: 0;
+	left: 0;
+	margin-top: 6px;
+	margin-left: 6px;
+	height: calc(20%);
+	min-height: calc(20%);
+	width: calc(100% - 14px);
+	border-radius: 6px;
+	color: white;
+	font-size: 1rem;
+}
+
+.lbItem:last-of-type {
+	margin-bottom: 6px;
+}
+
+.lbItem.correct {
+	background-color: rgba(53, 228, 53, 0.5);
+}
+
+.lbItem.drawingLB {
+	background-color: rgba(0, 70, 255, 0.5);
+}
+
+.lbName{
+	position: absolute;
+	margin: 4px;
+	padding-left: 4px;
+	padding-right: 4px;
+	height: calc(20% - 10px);
+	width: calc(60% - 20px);
+	border-radius: 3px;
+}
+
+.lbName > p {
+	position: absolute;
+	white-space: nowrap;
+	top: 50%;
+	left: 2px;
+	transform: translate(0%, -50%);
+}
+
+.curUser{
+	font-weight: bold;
+}
+
+.lbPoints{
+	right: 8px;
+	position: absolute;
+	margin: 4px;
+	padding-left: 4px;
+	padding-right: 4px;
+	height: calc(20% - 10px);
+	width: calc(40% - 27px);
+	border-radius: 3px;
+}
+
+.lbPoints > p {
+	position: absolute;
+	white-space: nowrap;
+	top: 50%;
+	right: 4px;
+	transform: translate(0%, -50%);
+}
+
+#chat {
+	right: 0;
+	top: calc(40vh - 12px);
+	margin: 12px;
+	width: calc(30vw - 20px);
+	height: calc(60vh - 14px);
+	position: absolute;
+	border-radius: 12px;
+}
+
+#chatDisplay {
+	position: absolute;
+	overflow-y: auto;
+	top: 0;
+	left: 0;
+	margin: 6px;
+	padding: 6px;
+	height: calc(90% - 26px);
+	width: calc(100% - 26px);
+	border-radius: 6px;
+	color: white;
+	font-size: 1rem;
+	display: flex;
+	flex-direction: column;
+}
+
+#chatDisplay > :first-child {
+	margin-top: auto !important;
+}
+
+.user {
+	font-weight: bold;
+}
+
+.ai::before {
+	content: "";
+}
+
+.ai {
+	text-shadow: 1px 1px 2px #49e449;
+	color: #8aff8a !important;
+}
+
+#chatDisplay > .correct {
+	color: #49e449;
+}
+
+.chatMes > .correct {
+	color: #48f948;
+}
+
+#chatDisplay > .leave {
+	color: #ffc21a;
+}
+
+#chatDisplay > .join {
+	color: #ffd35c;
+}
+
+#chatDisplay > .system {
+	color: #498ce4;
+}
+
+.chatMes > .system {
+	color: #4896f9;
+}
+
+#chatInput {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	margin: 6px;
+	padding-left: 6px;
+	padding-right: 6px;
+	height: calc(10% - 8px);
+	width: calc(100% - 26px);
+	border-radius: 6px;
+	color: white;
+	font-size: 1rem;
+}
+
+#sendChat {
+	cursor: pointer;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	margin-right: 12px;
+	margin-bottom: 12px;
+	padding-left: 4px;
+	padding-right: 4px;
+	height: calc(10% - 18px);
+	width: calc(20% - 22px);
+	border-radius: 3px;
+	color: white;
+	font-size: 1rem;
+}
+
+#colorSelect {
+	margin: 6px;
+	width: calc(100% - 14px);
+	height: calc(32% - 10px);
+	border-radius: 6px;
+}
+
+#colorCont {
+	margin: 6px;
+	margin-top: 0px;
+	width: calc(100% - 14px);
+}
+
+.color {
+	width: 10%;
+	margin-right: 9px;
+	margin-bottom: 9px;
+	aspect-ratio: 1 / 1;
+	border-radius: 50%;
+	border: 3px solid rgba(255, 255, 255, 0.25);
+}
+
+.color:hover {
+	cursor: pointer;
+	border: 3px solid rgba(255, 255, 255, 0.4) !important;
+}
+
+#strokeSelect {
+	margin: 6px;
+	width: calc(100% - 14px);
+	border-radius: 6px;
+}
+
+#toolSelect {
+	margin: 6px;
+	width: calc(100% - 14px);
+	border-radius: 6px;
+}
+
+.drawHeader {
+	margin: 6px;
+	font-size: 1.45em;
+}
+
+input[type="color"] {
+	padding: 0;
+	margin: 0;
+	border: none;
+	box-shadow: none;
+	border-radius: 50%;
+	background: none;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+	padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+	border: none;
+	width: 10%;
+	border-radius: 50%;
+}
+
+input[type="color" i] {
+	border-radius: 50%;
+	border: none;
+	margin-right: 9px;
+	margin-bottom: 9px;
+	height: var(--iHeight);
+	border: 3px solid rgba(255, 255, 255, 0.25);
+	width: 10%;
+	display: inline;
+	background: linear-gradient(
+			90deg,
+			rgba(255, 0, 0, 1) 0%,
+			rgba(255, 154, 0, 1) 10%,
+			rgba(208, 222, 33, 1) 20%,
+			rgba(79, 220, 74, 1) 30%,
+			rgba(63, 218, 216, 1) 40%,
+			rgba(47, 201, 226, 1) 50%,
+			rgba(28, 127, 238, 1) 60%,
+			rgba(95, 21, 242, 1) 70%,
+			rgba(186, 12, 248, 1) 80%,
+			rgba(251, 7, 217, 1) 90%,
+			rgba(255, 0, 0, 1) 100%
+	);
+}
+
+input[type="color" i]:hover {
+	cursor: pointer;
+}
+
+#toolSelect > button:first-of-type {
+	margin-left: 7px;
+}
+
+#toolSelect > button {
+	margin-left: 6px;
+	padding: 4px;
+	height: calc(10% - 18px);
+	width: calc(21% - 22px);
+	border-radius: 6px;
+	color: white;
+	font-size: 1rem;
+}
+
+#stroke {
+	-webkit-appearance: none;
+	appearance: none;
+	margin-left: 6px;
+	width: calc(80% - 6px);
+	cursor: pointer;
+	outline: none;
+	overflow: hidden;
+	border-radius: 16px;
+	border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+#stroke::-webkit-slider-runnable-track {
+	transition: 0.25s;
+	height: 15px;
+	background: #dedede;
+	border-radius: 16px;
+}
+
+#stroke::-webkit-slider-runnable-track:hover {
+	background: #c3c3c3;
+	border-radius: 16px;
+}
+
+#stroke::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	clip: rect(0, 10px, 10px, 0);
+	height: 15px;
+	width: 15px;
+	margin-bottom: 1px;
+	background-color: #fff;
+	border-radius: 50%;
+	border: 2px solid #386aff;
+	box-shadow: -407px 0 0 400px #386aff;
+}
+
+#strokeCont {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+#chooseWord button {
+	margin-left: 6px;
+	margin-top: 6px;
+	padding: 6px;
+	border-radius: 6px;
+	color: white;
+	font-size: 2rem;
+}
+
+#chooseWordCont {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+#chooseWordTitle {
+	text-align: center;
+	font-size: 2.5rem;
+	font-weight: bold;
+}
+
+/* join screen */
+#mainCont {
+	margin-top: 12px;
+	height: calc(100vh - 26px);
+	width: 30vw;
+	border-radius: 12px;
+	position: absolute;
+	right: 50%;
+	transform: translate(50%);
+}
+
+#title {
+	height: 8%;
+	font-size: 3em;
+	font-display: bolder;
+	text-align: center;
+}
+
+#subCont {
+	height: 92%;
+}
+
+#roomInput {
+	margin: 6px;
+	margin-top: 0px;
+	padding-left: 6px;
+	padding-right: 6px;
+	height: calc(7% - 8px);
+	width: calc(100% - 26px);
+	border-radius: 6px;
+	color: white;
+	font-size: 1rem;
+}
+
+#nameInput {
+	margin: 6px;
+	margin-top: 0px;
+	padding-left: 6px;
+	padding-right: 6px;
+	height: calc(7% - 8px);
+	width: calc(100% - 26px);
+	border-radius: 6px;
+	color: white;
+	font-size: 1rem;
+}
+
+#createBtn {
+	cursor: pointer;
+	position: absolute;
+	top: 15%;
+	right: 0;
+	margin-right: 10px;
+	margin-bottom: 12px;
+	padding-left: 4px;
+	padding-right: 4px;
+	height: calc(7% - 18px);
+	width: calc(21% - 22px);
+	border-radius: 3px;
+	color: white;
+	font-size: 1rem;
+}
+
+#roomCont {
+	overflow-y: auto;
+	margin: 6px;
+	margin-top: 0px;
+	width: calc(100% - 14px);
+	height: calc(86% - 8px);
+	border-radius: 6px;
+	display: flex;
+	flex-direction: column;
+}
+
+.roomCard {
+	cursor: pointer;
+	position: relative;
+	margin: 6px;
+	margin-bottom: 0px;
+	border-radius: 3px;
+	height: 10%;
+	min-height: 10%;
+	width: calc(100% - 14px);
+}
+
+.roomCard {
+	transition: 0.25s;
+}
+
+.roomCard:hover {
+	border: 1px solid rgba(255, 255, 255, 0.75);
+}
+
+.roomCard:last-of-type {
+	margin-bottom: 6px;
+}
+
+.roomCard > h1 {
+	font-size: 1.75em;
+	font-display: bold;
+}
+
+.roomCard > h3 {
+	font-size: 1em;
+}
+
+.roomCard > .roomPlrCount {
+	position: absolute;
+	bottom: 3px;
+	right: 3px;
+}
+
+.roomCard > .roomStatus {
+	position: absolute;
+	bottom: 3px;
+	left: 3px;
+}
+
+.roomCard > .roomNameJoin {
+	position: absolute;
+	top: 3px;
+	left: 3px;
+}

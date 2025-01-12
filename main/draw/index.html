@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>draw</title>
+    <link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="../content/glassmorphism.css">
+  </head>
+	<body onload="init()" onresize="resizeCanvas()">
+		<!--background blur-->
+  	<div id="blur">
+		<img class="gPic" id="color"/>
+		<img class="gPic" id="back"/>
+		<img class="gPic" id="back-center"/>
+		</div>
+		<!--background blur end-->
+		<div class="blur" id="titleBar">
+			<p id="timeLeft">0:35 Left</p> 	
+			<div class="sBlur" id="ownPlace"><p>1st</p></div>
+			<div class="sBlur" id="roomName"><p>Pomegranat</p></div>
+		</div>
+		<div class="blur" id="topBar"><p>___c__o</p></div>
+		<div style="display: block;" class="blur drawing" id="canvasDisp"><canvas id="drawCanvas" width="400" height="400"></canvas></div>
+		<div style="display: none;" id="drawPanels"><div style="display: none;" class="drawing" id="chooseWord">
+			<div id="chooseWordCont">
+				<p id="chooseWordTitle">Choose a Word</p>
+				<button class="blur">Apple</button>
+				<button class="blur">Orange</button>
+				<button class="blur">Avacado</button>
+			</div>
+		</div>
+		<div class="blur" id="chat">
+			<div id="colorSelect">
+				<h3 class="drawHeader">Color</h3>
+				<div id="colorCont">
+					<button class="color" style="background-color: #000000" onclick="color(this)"></button>
+					<button class="color" style="background-color: #ffffff" onclick="color(this)"></button>
+					<button class="color" style="background-color: #c1c1c1" onclick="color(this)"></button>
+					<button class="color" style="background-color: #FF3131" onclick="color(this)"></button>
+					<button class="color" style="background-color: #FFA500" onclick="color(this)"></button>
+					<button class="color" style="background-color: #FFEA00" onclick="color(this)"></button>
+					<button class="color" style="background-color: #00ff00" onclick="color(this)"></button>
+					<button class="color" style="background-color: #87CEEB" onclick="color(this)"></button>
+					<button class="color" style="background-color: #0000ff" onclick="color(this)"></button>
+					<button class="color" style="background-color: #7F00FF" onclick="color(this)"></button>
+					<button class="color" style="background-color: #FFC0CB" onclick="color(this)"></button>
+					<button class="color" style="background-color: #d2b48c " onclick="color(this)"></button>
+					<button class="color" style="background-color: #964B00" onclick="color(this)"></button>
+					<input type="color" id="customColor" onchange="ccolor(this)" onclick="ccolor(this)" value="#ffffff"></input>
+				</div>
+			</div>
+			<div id="strokeSelect">
+				<h3 class="drawHeader">Size</h3>
+				<div id="strokeCont">
+					<input oninput="updateStroke(this)" id="stroke" type="range" min="1" max="20" value="3">
+					<p id="strokeDisp" style="display: inline;margin-left: 5px;">3 px</p>
+				</div>
+			</div>
+			<div id="toolSelect">
+				<h3 class="drawHeader">Tools</h3>
+				<button class="sBlur" onclick="undo()">Undo</button>
+				<button class="sBlur" onclick="erase()">Clear</button>
+			</div>
+		</div></div>
+		<div class="blur" id="bottomBar"><p>OnlyTwentyChars is drawing.</p></div>
+		<div class="blur" id="leaderboard">
+			<div class="lbItem sBlur drawingLB"><div class="lbName"><p>OnlyTwentyChars</p></div><div class="lbPoints"><p>9999</p></div></div>
+			<div class="lbItem sBlur"><div class="lbName"><p>bobrossydude</p></div><div class="lbPoints"><p>9999</p></div></div>
+			<div class="lbItem sBlur correct"><div class="lbName"><p>emperor</p></div><div class="lbPoints"><p>9999</p></div></div>
+			<div class="lbItem sBlur correct"><div class="lbName"><p class="ai">AI</p></div><div class="lbPoints"><p>9999</p></div></div>
+		</div>
+	<script src="script.js"></script>
+  </body>
+</html>

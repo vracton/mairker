@@ -1,0 +1,43 @@
+	<!DOCTYPE html>
+	<html lang="en">
+	  <head>
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	    <title></title>
+	    <link rel="stylesheet" href="style.css">
+			<link rel="stylesheet" href="../content/glassmorphism.css">
+	  </head>
+	  <body>
+			<!--background blur-->
+			<div id="blur">
+			<img class="gPic" id="color"/>
+			<img class="gPic" id="back"/>
+			<img class="gPic" id="back-center"/>
+			</div>
+			<!--background blur end-->
+			<p class="chatMes"><span class="user">bobrossydude</span>: orange</p>
+			<p class="chatMes"><span class="user">emperor</span>: passionfruit</p>
+			<p class="chatMes"><span class="user">OnlyTwentyChars</span>: OnlyTwentyCharactersjkjk</p>
+			<p class="chatMes correct"><span class="user correct">emperor</span> guessed the word! (+100)</p>
+			<p class="chatMes"><span class="user">bobrossydude</span>: fried monkey balls</p>
+			<p class="chatMes"><span class="user ai">AI</span>: banana</p>
+			<p class="chatMes correct"><span class="user ai correct">AI</span> guessed the word! (+75)</p>
+			<p class="chatMes system"><span class="user system">OnlyTwentyChars</span> was drawing <span class="user system">avacado</span>. 3/4 got it right! (+38)</p>
+			<p class="chatMes join"><span class="user">mokney</span> has joined!</p>
+			<p class="chatMes leave"><span class="user">mokney</span> has left!</p>
+			<!--chat-->
+			<div class="lbItem sBlur drawingLB"><div class="lbName"><p>OnlyTwentyChars</p></div><div class="lbPoints"><p>9999</p></div></div>
+			<div class="lbItem sBlur"><div class="lbName"><p>bobrossydude</p></div><div class="lbPoints"><p>9999</p></div></div>
+			<div class="lbItem sBlur correct"><div class="lbName"><p class="curUser">emperor</p></div><div class="lbPoints"><p>9999</p></div></div>
+			<div class="lbItem sBlur correct"><div class="lbName"><p class="ai">AI</p></div><div class="lbPoints"><p>9999</p></div></div>
+			<!--leaderbarod-->
+			<div style="display:none;" id="defaultRoomCard" class="sBlur roomCard">
+				<h1 class="roomNameJoin"></h1>
+				<h3 class="roomStatus"></h3>
+				<h3 class="roomPlrCount"></h3>
+			</div>
+			<!--roomCard-->
+		<script src="script.js"></script>
+	  </body>
+	</html>

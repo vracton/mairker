@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mairker</title>
+    <link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="../content/glassmorphism.css">
+  </head>
+	<body onresize="resizeCanvas()">
+		<!--background blur-->
+  	<div id="blur">
+		<div class="gPic" id="color"></div>
+		<div class="gPic" id="back"></div>
+		<div class="gPic" id="back-center"></div>
+		</div>
+		<!--background blur end-->
+		<div style="display: block;" id="join">
+			<div id="mainCont" class="blur">
+				<h1 id="title">M<span class="ai">ai</span>rker</h1>
+				<div id="subCont">
+					<input type="text" placeholder="Nickname" class="sBlur" id="nameInput" onfocus="this.placeholder = 'Nickname'" maxlength="15" autocomplete="off"/>
+					<input type="text" placeholder="Room Name" class="sBlur" id="roomInput" onfocus="this.placeholder = 'Room Name'" maxlength="15" autocomplete="off"/>
+					<button class="sBlur" id="createBtn" onclick="createGame()">Create</button>
+					<div id="roomCont" class="sBlur"></div>
+				</div>
+			</div>
+		</div>
+		<div style="display: none;" id="play">
+			<div class="blur" id="titleBar">
+				<p id="timeLeft"></p> 	
+				<!--<div class="sBlur" id="ownPlace"><p>1st</p></div>-->
+				<div class="sBlur" id="roomName"><p></p></div>
+			</div>
+			<div class="blur" id="topBar"><p></p></div>
+			<div style="display: block;" class="blur drawing" id="canvasDisp"><canvas onload="resizeCanvas()" id="drawCanvas" width="400" height="400"></canvas></div>
+			<div style="display: block" id="chatPanel"><div class="blur" id="chat">
+				<div class="sBlur" id="chatDisplay"></div>
+				<input type="text" placeholder="Send your guess." class="sBlur" id="chatInput" maxlength="24"/>
+				<button class="sBlur" onclick="sendChat()" id="sendChat">Send</button>
+			</div></div>
+			<div style="display: none;" id="drawPanels"><div style="display: none;" class="drawing" id="chooseWord">
+				<div id="chooseWordCont">
+					<p id="chooseWordTitle">Choose a Word</p>
+					<div style="display:flex;justify-content:center;">
+					<button onclick="chooseWord(this)" id="choice1" class="blur" style="white-space: nowrap"></button>
+					<button onclick="chooseWord(this)" id="choice2" class="blur" style="white-space: nowrap"></button>
+					<button onclick="chooseWord(this)" id="choice3" class="blur" style="white-space: nowrap"></button>
+					</div>
+				</div>
+			</div>
+			<div class="blur" id="chat">
+				<div id="colorSelect">
+					<h3 class="drawHeader">Color</h3>
+					<div id="colorCont">
+						<button class="color" style="background-color: #000000" onclick="color(this)"></button>
+						<button class="color" style="background-color: #ffffff" onclick="color(this)"></button>
+						<button class="color" style="background-color: #c1c1c1" onclick="color(this)"></button>
+						<button class="color" style="background-color: #FF3131" onclick="color(this)"></button>
+						<button class="color" style="background-color: #FFA500" onclick="color(this)"></button>
+						<button class="color" style="background-color: #FFEA00" onclick="color(this)"></button>
+						<button class="color" style="background-color: #00ff00" onclick="color(this)"></button>
+						<button class="color" style="background-color: #87CEEB" onclick="color(this)"></button>
+						<button class="color" style="background-color: #0000ff" onclick="color(this)"></button>
+						<button class="color" style="background-color: #7F00FF" onclick="color(this)"></button>
+						<button class="color" style="background-color: #FFC0CB" onclick="color(this)"></button>
+						<button class="color" style="background-color: #d2b48c " onclick="color(this)"></button>
+						<button class="color" style="background-color: #964B00" onclick="color(this)"></button>
+						<input type="color" id="customColor" onchange="ccolor(this)" onclick="ccolor(this)" value="#ffffff"></input>
+					</div>
+				</div>
+				<div id="strokeSelect">
+					<h3 class="drawHeader">Size</h3>
+					<div id="strokeCont">
+						<input oninput="updateStroke(this)" id="stroke" type="range" min="1" max="20" value="3">
+						<p id="strokeDisp" style="display: inline;margin-left: 5px;">3 px</p>
+					</div>
+				</div>
+				<div id="toolSelect">
+					<h3 class="drawHeader">Tools</h3>
+					<button class="sBlur" onclick="undo()">Undo</button>
+					<button class="sBlur" onclick="erase()">Clear</button>
+				</div>
+			</div></div>
+			<div class="blur" id="bottomBar"><p></p></div>
+			<div class="blur" id="leaderboard"></div>
+		</div>
+		<script src="script.js"></script>
+		<script src="./content/labels.js"></script>
+		<script src="./socket.io/socket.io.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-tflite@0.0.1-alpha.8/dist/tf-tflite.min.js"></script>
+  </body>
+</html>
