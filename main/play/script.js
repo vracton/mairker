@@ -44,7 +44,7 @@ async function preloadImages(){
 }
 
 const loadModel = async () => {
-		model = await tflite.loadTFLiteModel("../content/QuickDraw.tflite");
+		model = await tflite.loadTFLiteModel("../content/Mairker.tflite");
 		model.predict(tf.zeros([1, 28, 28, 1])); // warmup
 
 		console.log(`AI Model loaded! (${LABELS.length} classes)`);
